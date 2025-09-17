@@ -1,10 +1,10 @@
-import sqlite3
-import config
+import sqlite3 # БД
+import config # ПУТЬ К БД ОТ ТУДА БЕРУ
 
-db = sqlite3.connect(config.sqlite_base)
-cursor = db.cursor()
+db = sqlite3.connect(config.sqlite_base) # подключение БД
+cursor = db.cursor() # курсор 
 
-def stats(id: int) -> str:
+def stats(id: int) -> str: 
     i = cursor.execute(f'SELECT * FROM users_bot WHERE id = ?', (id,)).fetchall()[0]
     date = cursor.execute(f'SELECT * FROM date_users WHERE id = ?', (id,)).fetchall()[0]
     text = f"""<b>Общая информация</b>

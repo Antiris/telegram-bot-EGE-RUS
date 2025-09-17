@@ -17,6 +17,6 @@ rulesdelete = call_delete.add(delete)
 
 #Подписка
 call_sub = InlineKeyboardMarkup()
-sub_link = InlineKeyboardButton(text='Подписаться 🔥', url='t.me/sdadim_ege')
-sub_ok = InlineKeyboardButton(text='Я подписчик 😎', callback_data='sub_ok')
+sub_link = InlineKeyboardButton(text='Подписаться 🔥', url='t.me/sdadim_ege') # кнопка со ссылкой 
+sub_ok = InlineKeyboardButton(text='Я подписчик 😎', callback_data='sub_ok') 
 sub = call_sub.add(sub_link).add(sub_ok)

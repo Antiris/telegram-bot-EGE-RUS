@@ -14,15 +14,15 @@ def rus_4(id: int) -> str:
     r = cursor.execute('SELECT no_tip FROM rus_4').fetchall()
     no_tip = [r[i][0] for i in range(len(r))]
     c = random.randint(2, 4)
-    sd = [1, 2, 3]
-    while len(set(sd)) != 5:
+    sd = []
+    while len(set(sd)) != 5: 
         sd = []
         s = random.sample(yes_tip, c)
         l = random.sample(no_tip, 5 - c)
         for i in s: sd.append(i.replace('Ё', 'е').lower())
         for i in l: sd.append(i.replace('Ё', 'е').lower())
     k = []
-    d = ''
+    d = '' 
     k.extend(s)
     k.extend(l)
     random.shuffle(k)
@@ -95,7 +95,6 @@ def rus_6(id: int) -> str:
 {r[i][0]}"""
     return text
 
-# Допилить алгоритм!
 def rus_7(id: int) -> str:
     r = cursor.execute('SELECT * FROM rus_7').fetchall()
     yes_tip = [r[i] for i in range(len(r)) if r[i][1] == 1]
@@ -150,8 +149,8 @@ def rus_8(id: int) -> str:
     yes_tip6 = [r[i] for i in range(len(r)) if r[i][1] == 6]
     yes_tip7 = [r[i] for i in range(len(r)) if r[i][1] == 7]
     yes_tip8 = [r[i] for i in range(len(r)) if r[i][1] == 8]
-    spn = random.sample(no_tip, 4)
-    k = random.sample(range(1, 9), 5)
+    spn = random.sample(no_tip, 4) # предложения без нарушения
+    k = random.sample(range(1, 9), 5) # рандом типов 5 8 6 7 9
     yes_tip = []
     for j in k: yes_tip += [(random.choice(eval(f'yes_tip{j}')))]
     sp = []
