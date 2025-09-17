@@ -1,8 +1,8 @@
-import sqlite3 # БД
-import config # ПУТЬ К БД ОТ ТУДА БЕРУ
+import sqlite3 
+import config 
 
-db = sqlite3.connect(config.sqlite_base) # подключение БД
-cursor = db.cursor() # курсор 
+db = sqlite3.connect(config.sqlite_base) 
+cursor = db.cursor() 
 
 def stats(id: int) -> str: 
     i = cursor.execute(f'SELECT * FROM users_bot WHERE id = ?', (id,)).fetchall()[0]
@@ -19,13 +19,7 @@ ID: {id}
 6 Задание: верных {i[9]} из {i[8]} | {int(round(i[9] / i[8], 2) * 100) if i[8] != 0  else 0}%
 7 Задание: верных {i[11]} из {i[10]} | {int(round(i[11] / i[10], 2) * 100) if i[10] != 0  else 0}%
 8 Задание: {i[13]}/{i[14]}/{i[15]} из {i[12]} | {f'{int(round(i[13] / i[12], 2) * 100)}% {int(round(i[14] / i[12], 2) * 100)}% {int(round(i[15] / i[12], 2) * 100)}%' if i[12] != 0  else '0% 0% 0%'}  
-13 Задание: верных {i[17]} из {i[16]} | {int(round(i[17] / i[16], 2) * 100) if i[16] != 0  else 0}%
-14 Задание: верных {i[19]} из {i[18]} | {int(round(i[19] / i[18], 2) * 100) if i[18] != 0  else 0}%
 15 Задание: верных {i[21]} из {i[20]} | {int(round(i[21] / i[20], 2) * 100) if i[20] != 0  else 0}%
-16 Задание: верных {i[23]} из {i[22]} | {int(round(i[23] / i[22], 2) * 100) if i[22] != 0  else 0}%
-17 Задание: верных {i[25]} из {i[24]} | {int(round(i[25] / i[24], 2) * 100) if i[24] != 0  else 0}%
-18 Задание: верных {i[27]} из {i[26]} | {int(round(i[27] / i[26], 2) * 100) if i[26] != 0  else 0}%
-19 Задание: верных {i[29]} из {i[28]} | {int(round(i[29] / i[28], 2) * 100) if i[28] != 0  else 0}%
-20 Задание: верных {i[31]} из {i[30]} | {int(round(i[31] / i[30], 2) * 100) if i[30] != 0  else 0}%
 """
+
     return text
