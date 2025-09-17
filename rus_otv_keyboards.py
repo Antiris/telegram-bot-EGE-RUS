@@ -1,13 +1,10 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton # библиотека инлайн-клава и инлайн-кнопки 
-# Кнопки по номерам заданий 
-# 4 --------
-# Кнопки для решения задания
-rus_4_otvet = InlineKeyboardMarkup() # клава
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
+
+rus_4_otvet = InlineKeyboardMarkup() 
 rus_4_otv = InlineKeyboardButton('Ответить 📝', callback_data = 'otv_rus_4') 
 exit = InlineKeyboardButton('Назад ↩️', callback_data = 'exit')
-rus_4_pan = rus_4_otvet.add(rus_4_otv).add(exit) # отображение клавиатуры 
+rus_4_pan = rus_4_otvet.add(rus_4_otv).add(exit) 
 
-# Кнопки после решения задания
 rus_4_dal = InlineKeyboardMarkup()
 prod_rus_4 = InlineKeyboardButton('Дальше ➡️', callback_data = 'rus_4_1')
 exit = InlineKeyboardButton('Назад ↩️', callback_data = 'exit_1')
@@ -154,4 +151,5 @@ rus_21_pan = rus_21_otvet.add(rus_21_otv).add(exit)
 rus_21_dal = InlineKeyboardMarkup()
 prod_rus_21 = InlineKeyboardButton('Дальше ➡️', callback_data = 'rus_21_1')
 exit = InlineKeyboardButton('Назад ↩️', callback_data = 'exit_1')
+
 rus_21_dal_pan = rus_21_dal.add(prod_rus_21).add(exit)
