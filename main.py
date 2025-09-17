@@ -24,25 +24,12 @@ db = sqlite3.connect(config.sqlite_base)
 cursor = db.cursor()
 
 class Otvet_rus(StatesGroup):
-    otv_rus_123 = State()
     otv_rus_4 = State()
     otv_rus_5 = State()
     otv_rus_6 = State()
     otv_rus_7 = State()
     otv_rus_8 = State()
-    otv_rus_9 = State()
-    otv_rus_10 = State()
-    otv_rus_11 = State()
-    otv_rus_12 = State()
-    otv_rus_13 = State()
-    otv_rus_14 = State()
     otv_rus_15 = State()
-    otv_rus_16 = State()
-    otv_rus_17 = State()
-    otv_rus_18 = State()
-    otv_rus_19 = State()
-    otv_rus_20 = State()
-    otv_rus_21 = State()
 
 def check_sub_channel(chat_member):
     if chat_member['status'] != 'left':
@@ -403,3 +390,4 @@ async def call_delete_menu(call: types.CallbackQuery): await bot.delete_message(
 
 # ------ КОНЕЦ ------
 if __name__ == "__main__": executor.start_polling(dp, skip_updates = False)
+
